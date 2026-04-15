@@ -6,7 +6,6 @@
     "uuid": "db229d14-99e2-439f-885e-c62e8cbf8783",
     "mavenUrls": [
         "https://frcmaven.wpi.edu/release",
-        "https://repo1.maven.org/maven2",
         "https://FRC9015.github.io/QELib/"
 
     ],
@@ -14,14 +13,14 @@
     "javaDependencies": [
         {
             "groupId": "com.qelib",
-            "artifactId": "QELib-java",
+            "artifactId": "qelib-java",
             "version": "0.0.1"
         }
     ],
     "jniDependencies": [
         {
             "groupId": "com.qelib.jni",
-            "artifactId": "QELib-driver",
+            "artifactId": "qelib-driver",
             "version": "0.0.1",
             "skipInvalidPlatforms": true,
             "isJar": false,
@@ -38,7 +37,7 @@
     "cppDependencies": [
         {
             "groupId": "com.qelib.lib",
-            "artifactId": "QELib-cpp",
+            "artifactId": "qelib-cpp",
             "version": "0.0.1",
             "libName": "QELib",
             "headerClassifier": "headers",
