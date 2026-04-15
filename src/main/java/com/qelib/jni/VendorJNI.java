@@ -56,5 +56,5 @@ public class VendorJNI {
    * @return the int returned by the driver
    * @see "VendorJNI.cpp"
    */
-  public static native int initialize();
+  // public static native int initialize();
 }
