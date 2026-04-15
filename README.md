@@ -28,4 +28,8 @@ By default, this template builds against the latest WPILib development build. To
 After you've published your library to maven, you can use the [vendordep checker](https://github.com/wpilibsuite/vendor-json-repo/blob/main/check.py) to check for common errors, such as not publishing all dependencies, and ensuring that all architectures are correct.
 
 ## Listing Vendordep in VS Code Dependency Manager
-Follow the directions at [WPILib Vendor JSON Repository](https://github.com/wpilibsuite/vendor-json-repo/blob/main/README.md) to get a Vendordep included in the [VS Code Dependency Manager](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html#installing-libraries)
+Follow the directions at [WPILib Vendor JSON Repository](https://github.com/wpilibsuite/vendor-json-repo/blob/main/README.md) to get a Vendordep included in the [VS Code Dependency Manager](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-
+
+## QELib JSON Url
+(https://frc9015.github.io/QELib/QELib.json)
+##libraries.html#installing-libraries)
