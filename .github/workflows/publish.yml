@@ -29,11 +29,12 @@ jobs:
         run: ./gradlew build publish
 
       - name: Prepare Website Folder
-        # This copies the generated Maven artifacts and the .json file into a folder called 'public'
         run: |
           mkdir -p public
           cp *.json public/
-          cp -r ~/.m2/repository/* public/
+          # Copy the compiled Java files from WPILib's custom output folders
+          cp -r build/repos/releases/* public/ 2>/dev/null || true
+          cp -r build/repos/development/* public/ 2>/dev/null || true
 
       - name: Deploy to GitHub Pages
         # This pushes the 'public' folder to the gh-pages branch, making it a website!
