@@ -1,7 +1,7 @@
 {
     "fileName": "QELib.json",
     "name": "QELib",
-    "version": "${version}",
+    "version": "0.0.1",
     "frcYear": "2026",
     "uuid": "db229d14-99e2-439f-885e-c62e8cbf8783",
     "mavenUrls": [
@@ -10,19 +10,19 @@
         "https://FRC9015.github.io/QELib/"
 
     ],
-    "jsonUrl": "InsertSomeUrlHere",
+    "jsonUrl": "https://frc9015.github.io/QELib/QELib.json",
     "javaDependencies": [
         {
-            "groupId": "${groupId}",
-            "artifactId": "${artifactId}-java",
-            "version": "${version}"
+            "groupId": "com.qelib",
+            "artifactId": "QELib-java",
+            "version": "0.0.1"
         }
     ],
     "jniDependencies": [
         {
-            "groupId": "${groupId}",
-            "artifactId": "${artifactId}-driver",
-            "version": "${version}",
+            "groupId": "com.qelib.jni",
+            "artifactId": "QELib-driver",
+            "version": "0.0.1",
             "skipInvalidPlatforms": true,
             "isJar": false,
             "validPlatforms": [
@@ -37,27 +37,10 @@
     ],
     "cppDependencies": [
         {
-            "groupId": "${groupId}",
-            "artifactId": "${artifactId}-cpp",
-            "version": "${version}",
-            "libName": "${artifactId}",
-            "headerClassifier": "headers",
-            "sharedLibrary": false,
-            "skipInvalidPlatforms": true,
-            "binaryPlatforms": [
-                "windowsx86-64",
-                "linuxarm64",
-                "linuxx86-64",
-                "linuxathena",
-                "linuxarm32",
-                "osxuniversal"
-            ]
-        },
-        {
-            "groupId": "${groupId}",
-            "artifactId": "${artifactId}-driver",
-            "version": "${version}",
-            "libName": "${artifactId}Driver",
+            "groupId": "com.qelib.lib",
+            "artifactId": "QELib-cpp",
+            "version": "0.0.1",
+            "libName": "QELib",
             "headerClassifier": "headers",
             "sharedLibrary": false,
             "skipInvalidPlatforms": true,
