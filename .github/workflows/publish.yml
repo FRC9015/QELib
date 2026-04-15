@@ -1,0 +1,43 @@
+name: Publish Vendordep to GitHub
+
+# This tells the action to run when you click the button manually, 
+# or automatically when you push to the "main" branch.
+on:
+  workflow_dispatch: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17' # Use '21' here if you are using WPILib 2025!
+          distribution: 'temurin'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build and Publish locally
+        # This compiles the code and saves it to a hidden folder on the runner (~/.m2/repository)
+        run: ./gradlew build publish
+
+      - name: Prepare Website Folder
+        # This copies the generated Maven artifacts and the .json file into a folder called 'public'
+        run: |
+          mkdir -p public
+          cp *.json public/
+          cp -r ~/.m2/repository/* public/
+
+      - name: Deploy to GitHub Pages
+        # This pushes the 'public' folder to the gh-pages branch, making it a website!
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
