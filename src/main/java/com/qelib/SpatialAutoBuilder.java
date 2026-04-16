@@ -12,8 +12,8 @@ import java.util.function.Supplier;
 public class SpatialAutoBuilder {
     private static Supplier<Pose2d> poseProvider;
     private static Consumer<ChassisSpeeds> outputSpeeds;
-    private static Map<String, Command> globalEventMap;
-    
+    public static Map<String, Command> globalEventMap;
+
     // Configured PID values
     private static double kX, kY, kTheta;
     
@@ -29,6 +29,17 @@ public class SpatialAutoBuilder {
         SpatialAutoBuilder.kX = kX;
         SpatialAutoBuilder.kY = kY;
         SpatialAutoBuilder.kTheta = kTheta;
+    }
+
+    public static void configurePID(
+            double kX, double kY, double kTheta) {
+        SpatialAutoBuilder.kX = kX;
+        SpatialAutoBuilder.kY = kY;
+        SpatialAutoBuilder.kTheta = kTheta;
+    }
+
+    public static void addEvent(String name, Command command){
+        SpatialAutoBuilder.globalEventMap.put(name, command);
     }
 
     // Creates a single path command dynamically
